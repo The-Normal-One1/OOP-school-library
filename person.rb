@@ -9,16 +9,18 @@ class Person
     @parent_permission = parent_permission
   end
 
-  def is_of_age?
-    @age >= 18
-  end
-
   def can_use_services?
     if is_of_age? || @parent_permission
       true
     else
       false
     end
+  end
+
+  private
+
+  def is_of_age?
+    @age >= 18
   end
 end
 
@@ -28,11 +30,9 @@ person2 = Person.new(15, 'Mary')
 # person one
 puts person1.name
 puts person1.age
-puts person1.is_of_age?
 puts person1.can_use_services?
 
 # person two
 puts person2.name
 puts person2.age
-puts person2.is_of_age?
 puts person2.can_use_services?
