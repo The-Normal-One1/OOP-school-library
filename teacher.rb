@@ -1,24 +1,21 @@
-require './person.rb'
+require './person'
 
 class Teacher < Person
+  attr_reader :specialization, :parent_permission
 
-    attr_reader :specialization, :parent_permission
-    def initialize(age, name = 'Unknown', parent_permission = true, specialization = 'Math')
-    
-        super(age, name, parent_permission)
-    
-        @specialization = specialization
-    
-    end
-    
-    def can_use_services?
-        if is_of_age? || @parent_permission
-            true
-        else
-            false
-        end
-    end
+  def initialize(age, name = 'Unknown', parent_permission = true, specialization = 'Math')
+    super(age, name, parent_permission)
 
+    @specialization = specialization
+  end
+
+  def can_use_services?
+    if is_of_age? || @parent_permission
+      true
+    else
+      false
+    end
+  end
 end
 
 teacher1 = Teacher.new(30, 'John', false, 'Math')
