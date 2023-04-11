@@ -39,7 +39,7 @@ After you're finished please remove all the comments and instructions!
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Vet Clinic Database ](#-vet-clinic-database-)
+- [📖 OOP school library ](#-OOP school library-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -71,7 +71,6 @@ After you're finished please remove all the comments and instructions!
 
 > Ruby
 
-
 <!-- <details>
 <summary>Database</summary>
   <ul>
@@ -86,6 +85,7 @@ After you're finished please remove all the comments and instructions!
 - **Add Person class**
 - **Add Student class**
 - **Add Teacher class**
+- **use the "Decorator" design pattern.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -132,7 +132,6 @@ To run the project, navigate to the correct directory path and execute the `Ruby
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **use the "Decorator" design pattern.**
 - [ ] **set up associations.**
 - [ ] **add basic UI.**
 - [ ] **refactor your code.**
