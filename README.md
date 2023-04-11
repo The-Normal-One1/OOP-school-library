@@ -30,7 +30,7 @@ After you're finished please remove all the comments and instructions!
   <!-- <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/> -->
 
-  <h3><b>Ruby's project title</b></h3>
+  <h3><b>OOP school library</b></h3>
 
 </div>
 
@@ -57,9 +57,13 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Ruby's project title <a name="about-project"></a>
+# 📖 OOP school library <a name="about-project"></a>
 
-**Ruby's project title** contains some queries of PostgreSQL database.
+**OOP school library** is an app that will allow you to:
+
+- Add new students or teachers.
+- Add new books.
+- Save records of who borrowed a given book and when.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -76,7 +80,9 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **Something**
+- **Add Person class**
+- **Add Student class**
+- **Add Teacher class**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,20 +97,19 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 - Code Editor (VS Studio)
-- Node.js
-- PostgreSQL
+- Ruby
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/The-Normal-One1/Vet-clinic-database.git
+  git clone https://github.com/The-Normal-One1/OOP-school-library.git
 ```
 
 ### Usage
 
-To run the project, you can copy queries from the given files and use them into psql or pgAdmin 4.
+To run the project, navigate to the correct directory path and execute the `Ruby Filename` command on your terminal.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,7 +129,12 @@ To run the project, you can copy queries from the given files and use them into 
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **More Tables**
+- [ ] **use the "Decorator" design pattern.**
+- [ ] **set up associations.**
+- [ ] **add basic UI.**
+- [ ] **refactor your code.**
+- [ ] **preserve data.**
+- [ ] **unit tests.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
