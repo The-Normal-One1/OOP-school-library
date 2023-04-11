@@ -3,18 +3,14 @@ require './person'
 class Teacher < Person
   attr_reader :specialization, :parent_permission
 
-  def initialize(age, name = 'Unknown', specialization = 'Math')
-    super(age, name, parent_permission: true)
+  def initialize(age, name = 'Unknown', specialization = 'Math', parent_permission: true)
+    super(age, name, parent_permission: parent_permission)
 
     @specialization = specialization
   end
 
   def can_use_services?
-    if is_of_age? || @parent_permission
-      true
-    else
-      false
-    end
+    true
   end
 end
 
@@ -27,7 +23,6 @@ puts teacher1.age
 puts teacher1.parent_permission
 puts teacher1.specialization
 puts teacher1.can_use_services?
-puts teacher1.is_of_age?
 puts teacher1.id
 
 # teacher two
@@ -36,5 +31,4 @@ puts teacher2.age
 puts teacher2.parent_permission
 puts teacher2.specialization
 puts teacher2.can_use_services?
-puts teacher2.is_of_age?
 puts teacher2.id
