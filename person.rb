@@ -42,7 +42,6 @@ puts person2.name
 puts person2.age
 puts person2.can_use_services?
 
-
 person = Person.new(22, 'maximilianus')
 person.correct_name
 capitalized_person = CapitalizeDecorator.new(person)
