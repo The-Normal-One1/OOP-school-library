@@ -44,11 +44,11 @@ puts person2.can_use_services?
 
 
 person = Person.new(22, 'maximilianus')
-  person.correct_name
-  capitalizedPerson = CapitalizeDecorator.new(person)
-  capitalizedPerson.correct_name
-  capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-  capitalizedTrimmedPerson.correct_name
+person.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+capitalized_trimmed_person.correct_name
 
-  puts capitalizedPerson.correct_name
-  puts capitalizedTrimmedPerson.correct_name
+puts capitalized_person.correct_name
+puts capitalized_trimmed_person.correct_name
