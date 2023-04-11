@@ -39,7 +39,7 @@ After you're finished please remove all the comments and instructions!
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 OOP school library ](#-OOP school library-)
+- [📖 OOP School Library ](#oop)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -57,7 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 OOP school library <a name="about-project"></a>
+# 📖 OOP School Library <a name="oop"></a>
 
 **OOP school library** is an app that will allow you to:
 
