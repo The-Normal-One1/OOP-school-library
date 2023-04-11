@@ -16,8 +16,6 @@ end
 student1 = Student.new(30, 'Ermiyas', 'Seventh')
 student2 = Student.new(15, 'Mary', 'Eighth')
 
-#  p student1
-#  p student2
 # student one
 puts student1.name
 puts student1.age

@@ -25,7 +25,6 @@ end
 person1 = Person.new(30, 'John')
 person2 = Person.new(15, 'Mary')
 
-# p person1
 # person one
 puts person1.name
 puts person1.age

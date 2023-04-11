@@ -21,9 +21,6 @@ end
 teacher1 = Teacher.new(30, 'John', 'Math')
 teacher2 = Teacher.new(25, 'Mary', 'English')
 
-# p teacher1
-# p teacher2
-
 # teacher one
 puts teacher1.name
 puts teacher1.age
