@@ -16,6 +16,10 @@ class Person < Nameable
     is_of_age? || @parent_permission
   end
 
+  def correct_name
+    name
+  end
+
   private
 
   def is_of_age?
