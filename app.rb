@@ -37,4 +37,12 @@ class App
     def create_rental(date, book, person)
         Rental.new(date, book, person)
     end
+
+    def list_rentals_for_person_id(person, id)
+        puts "No rentals are found for this ID" if person.empty?
+        person.each do |person, list|
+            puts "Rentals: #{person.rentals}"
+        end
+        puts '\n'
+    end
 end
