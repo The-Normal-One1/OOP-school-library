@@ -30,7 +30,7 @@ After you're finished please remove all the comments and instructions!
   <!-- <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/> -->
 
-  <h3><b>OOP school library</b></h3>
+  <h2><b>OOP school library</b></h2>
 
 </div>
 
@@ -86,6 +86,7 @@ After you're finished please remove all the comments and instructions!
 - **Add Student class**
 - **Add Teacher class**
 - **use the "Decorator" design pattern.**
+- **set up associations.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -132,7 +133,6 @@ To run the project, navigate to the correct directory path and execute the `Ruby
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **set up associations.**
 - [ ] **add basic UI.**
 - [ ] **refactor your code.**
 - [ ] **preserve data.**
