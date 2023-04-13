@@ -27,3 +27,11 @@ puts student1.parent_permission
 puts student2.name
 puts student2.age
 puts student2.parent_permission
+
+#classroom has many students
+classroom1 = Classroom.new('Tenth')
+puts classroom1.add_student(student1)
+puts classroom1.add_student(student2)
+
+puts classroom1.students
+puts classroom1.students.map { |student| student.name}
