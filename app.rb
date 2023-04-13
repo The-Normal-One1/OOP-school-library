@@ -33,4 +33,8 @@ class App
     def create_book(title, author)
         Book.new(title, author)
     end
+
+    def create_rental(date, book, person)
+        Rental.new(date, book, person)
+    end
 end
