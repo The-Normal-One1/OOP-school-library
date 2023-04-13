@@ -1,11 +1,11 @@
 require_relative 'person'
-require './class_room.rb'
-require './book.rb'
-require './rental.rb'
+require './class_room'
+require './book'
+require './rental'
 
 class Student < Person
   attr_accessor :classroom
-  attr_reader :classroom, :parent_permission
+  attr_reader :parent_permission
 
   def initialize(age, name = 'Unknown', classroom = 'Tenth', parent_permission: true)
     super(age, name, parent_permission: parent_permission)
@@ -14,11 +14,6 @@ class Student < Person
 
   def play_hooky
     '¯(ツ)/¯'
-  end
-
-  def classroom=(classroom)
-    @classroom = classroom
-    classroom.students.push(self) unless classroom.students.include?(self)
   end
 end
 
@@ -35,13 +30,13 @@ puts student2.name
 puts student2.age
 puts student2.parent_permission
 
-#classroom has many students
+# classroom has many students
 classroom1 = Classroom.new('Tenth')
 puts classroom1.add_student(student1)
 puts classroom1.add_student(student2)
 
 puts classroom1.students
-puts classroom1.students.map { |student| student.name}
+puts classroom1.students.map(&:name)
 
 # A student belongs to classroom
 puts classroom1.students[0].classroom
