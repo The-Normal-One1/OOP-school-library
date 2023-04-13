@@ -35,3 +35,7 @@ puts classroom1.add_student(student2)
 
 puts classroom1.students
 puts classroom1.students.map { |student| student.name}
+
+# A student belongs to classroom
+puts classroom1.students[0].classroom
+puts classroom1.students[1].classroom
