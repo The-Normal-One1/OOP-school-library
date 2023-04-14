@@ -89,10 +89,10 @@ class Main
   # List all rentals for a given person id
   def list_rentals_for_person_id
     puts 'ID of person:'
-    id = gets.chomp.to_i
+    id = gets.chomp
     puts "Rentals: \n"
-    rentals = @app.list_rentals_for_person_id(@list_of_people, id)
-    rentals&.each { |rental| puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}" }
+    rentals = @app.list_rentals_for_person_id(id.to_i, @list_of_people)
+    rentals&.each { |r| puts "Date: #{r.date}, Book: #{r.book.title} by #{r.book.author}" }
     puts "\n"
   end
 

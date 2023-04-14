@@ -29,10 +29,10 @@ class App
     end
   end
 
-  def list_rentals_for_person_id(persons, id)
-    return persons.find { |person| person.id == id }.rentals if persons.any? { |person| person.id == id }
-
-    puts 'No rentals found for this ID'
+  def list_rentals_for_person_id( id_person, persons)
+    puts "No rentals found for id #{id_person}" if persons.none? { |person| person.id == id_person }
+    return persons.find { |person| person.id == id_person }.rentals if persons.any? { |person| person.id == id_person }
+       puts "\n"  
   end
 
   def create_book(title, author)
