@@ -81,19 +81,18 @@ class Main
         #Enter the date
         puts 'Date:'
         date = gets.chomp
-        @app.create_rental(list_of_books[book.to_i], list_of_people[person.to_i], date)
+        @app.create_rental(date, @list_of_books[book.to_i], @list_of_people[person.to_i])
         puts 'Rental created successfully'
     end
     
-    def list_rentals_for_person_id 
+        # List all rentals for a given person id
+    def list_rentals_for_person_id
+        puts 'ID of person:'
         id = gets.chomp.to_i
-        puts 'Rentals:'
-        rentals = @app.list_rentals_for_person_id(@list_of_people, id) 
-        rentals.each do |rental|
-            puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+        puts "Rentals: \n"
+        rentals = @app.list_rentals_for_person_id(@list_of_people,id)
+        rentals&.each { |rental| puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}" }
         puts "\n"
-        end
-
     end
 
     # ask for user input
