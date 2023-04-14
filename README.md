@@ -115,6 +115,14 @@ Clone this repository to your desired folder:
 
 To run the project, navigate to the correct directory path and execute the `Ruby Filename` command on your terminal.
 
+### Run tests
+
+Coming soon
+
+### Deployment
+
+Coming soon
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
