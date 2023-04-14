@@ -24,8 +24,9 @@ class Person < Nameable
     name
   end
 
-  def add_rental(book, date)
-    Rental.new(date, book, self)
+  def add_rental(date, book)
+    rental = Rental.new(date, self, book)
+    @rentals.push(rental) unless @rentals.include?(rental)
   end
 
   private
@@ -34,26 +35,3 @@ class Person < Nameable
     @age >= 18
   end
 end
-
-person1 = Person.new(30, 'John')
-person2 = Person.new(15, 'Mary')
-
-# person one
-puts person1.name
-puts person1.age
-puts person1.can_use_services?
-
-# person two
-puts person2.name
-puts person2.age
-puts person2.can_use_services?
-
-person = Person.new(22, 'maximilianus')
-person.correct_name
-capitalized_person = CapitalizeDecorator.new(person)
-capitalized_person.correct_name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-capitalized_trimmed_person.correct_name
-
-puts capitalized_person.correct_name
-puts capitalized_trimmed_person.correct_name

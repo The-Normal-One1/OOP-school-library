@@ -47,6 +47,8 @@ After you're finished please remove all the comments and instructions!
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -87,6 +89,7 @@ After you're finished please remove all the comments and instructions!
 - **Add Teacher class**
 - **use the "Decorator" design pattern.**
 - **set up associations.**
+- **add basic UI.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,6 +118,14 @@ Clone this repository to your desired folder:
 
 To run the project, navigate to the correct directory path and execute the `Ruby Filename` command on your terminal.
 
+### Run tests
+
+Coming soon
+
+### Deployment
+
+Coming soon
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
@@ -133,7 +144,6 @@ To run the project, navigate to the correct directory path and execute the `Ruby
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **add basic UI.**
 - [ ] **refactor your code.**
 - [ ] **preserve data.**
 - [ ] **unit tests.**
