@@ -29,6 +29,12 @@ class App
             Teacher.new(age, name, specialization, parent_permission: parent_permission)
         end
     end
+
+    def list_rentals_for_person_id(persons, id)
+      return persons.find { |person| person.id == id }.rentals if persons.any? { |person| person.id == id }
+        puts "No rentals found for this ID"
+         
+    end
         
     def create_book(title, author)
         Book.new(title, author)
@@ -36,13 +42,5 @@ class App
 
     def create_rental(date, book, person)
         Rental.new(date, book, person)
-    end
-
-    def list_rentals_for_person_id(person, id)
-        puts "No rentals are found for this ID" if person.empty?
-        person.each do |person, list|
-            puts "Rentals: #{person.rentals}"
-        end
-        puts "\n"
     end
 end
