@@ -2,11 +2,11 @@ require './func'
 
 class Main
   def initialize
-    @Func = Func.new
+    @func = Func.new
   end
 
   def run
-    @Func.run
+    @func.run
   end
 end
 main = Main.new
