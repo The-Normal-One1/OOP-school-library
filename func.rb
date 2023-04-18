@@ -85,5 +85,15 @@ class Func
     @app.create_rental(date, @list_of_books[book.to_i], @list_of_people[person.to_i])
     puts 'Rental created successfully'
   end
+
+  # List all rentals for a given person id
+  def list_rentals_for_person_id
+    puts 'ID of person:'
+    id = gets.chomp
+    puts "Rentals: \n"
+    rentals = @app.list_rentals_for_person_id(id.to_i, @list_of_people)
+    rentals&.each { |r| puts "Date: #{r.date}, Book: #{r.book.title} by #{r.book.author}" }
+    puts "\n"
+  end
   
 end
