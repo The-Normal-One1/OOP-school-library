@@ -51,5 +51,17 @@ class Func
     puts 'Person created successfully'
   end
 
+  def create_book
+    puts 'Title:'
+    title = gets.chomp
+
+    puts 'Author:'
+    author = gets.chomp
+
+    book = @app.create_book(title, author)
+    @list_of_books << book
+    puts 'Book created successfully'
+  end
+
   
 end
