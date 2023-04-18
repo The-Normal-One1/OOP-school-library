@@ -29,5 +29,27 @@ class Func
   def list_people
     @app.list_all_people(@list_of_people, show_list: true)
   end
+
+  def create_person
+    puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]:'
+    select = gets.chomp.to_i
+
+    puts 'Age:'
+    age = gets.chomp.to_i
+
+    puts 'Name:'
+    name = gets.chomp
+
+    puts 'Specialization:' if select == 2
+    specialization = gets.chomp if select == 2
+
+    puts 'Has parent permission? [Y/N]:' if select == 1
+    parent_permission = gets.chomp.downcase == 'y' if select == 1
+
+    person = @app.create_person(select, age, name, specialization, parent_permission)
+    @list_of_people << person
+    puts 'Person created successfully'
+  end
+
   
 end
