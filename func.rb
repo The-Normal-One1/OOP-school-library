@@ -96,4 +96,27 @@ class Func
     puts "\n"
   end
   
+
+  # rubocop:disable Metrics/CyclomaticComplexity
+  def run
+    puts 'Welcome to School Library App!'
+    puts "\n"
+    loop do
+      case options
+      when 1 then list_books
+      when 2 then list_people
+      when 3 then create_person
+      when 4 then create_book
+      when 5 then create_rental
+      when 6 then list_rentals_for_person_id
+      when 7
+        puts 'Thank you for using this app!'
+        break
+      else
+        puts 'That is not a valid option'
+      end
+    end
+  end
+  # rubocop:enable Metrics/CyclomaticComplexity
+
 end
