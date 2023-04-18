@@ -63,5 +63,27 @@ class Func
     puts 'Book created successfully'
   end
 
+  def create_rental
+    if list_of_books.empty? || list_of_people.empty?
+      puts 'There are no books or people to create a rental'
+      return false
+    end
+
+    # Select a book from the list of books by entering the number that corresponds to the book
+    puts 'Select a book from the following list by number'
+    @app.list_all_books(@list_of_books, show_list: true)
+    book = gets.chomp
+
+    # Select a person from the list of people by entering the number that corresponds to the person
+    puts 'Select a person from the following list by number (not id)'
+    @app.list_all_people(@list_of_people, show_list: true)
+    person = gets.chomp
+
+    # Enter the date
+    puts 'Date:'
+    date = gets.chomp
+    @app.create_rental(date, @list_of_books[book.to_i], @list_of_people[person.to_i])
+    puts 'Rental created successfully'
+  end
   
 end
