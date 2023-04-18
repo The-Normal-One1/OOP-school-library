@@ -22,5 +22,12 @@ class Func
     gets.chomp.to_i
   end
 
+  def list_books
+    @app.list_all_books(@list_of_books, show_list: true)
+  end
+
+  def list_people
+    @app.list_all_people(@list_of_people, show_list: true)
+  end
   
 end
