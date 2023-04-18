@@ -95,7 +95,6 @@ class Func
     rentals&.each { |r| puts "Date: #{r.date}, Book: #{r.book.title} by #{r.book.author}" }
     puts "\n"
   end
-  
 
   # rubocop:disable Metrics/CyclomaticComplexity
   def run
@@ -118,5 +117,4 @@ class Func
     end
   end
   # rubocop:enable Metrics/CyclomaticComplexity
-
 end
