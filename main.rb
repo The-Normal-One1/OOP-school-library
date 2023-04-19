@@ -1,4 +1,6 @@
+require './app'
 require './func'
+require './preserve_data'
 
 class Main
   def initialize
