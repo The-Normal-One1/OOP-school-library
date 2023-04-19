@@ -1,4 +1,5 @@
 require './app'
+require 'json'
 
 class Func
   attr_accessor :app, :list_of_books, :list_of_people
@@ -7,6 +8,39 @@ class Func
     @app = App.new
     @list_of_books = []
     @list_of_people = []
+
+    base = "#{Dir.pwd}/stored_data"
+    books_list = File.read("#{base}/books.json")
+    people_list = File.read("#{base}/people.json")
+    rentals_list = File.read("#{base}/rentals.json")
+
+    JSON.parse(books_list).each do |book|
+      @list_of_books << @app.create_book(book['title'], book['author']) unless books_list == ''
+    end
+
+
+    handle_people(people_list == '[]' ? [] : JSON.parse(people_list))
+
+    handle_rentals(rentals_list == '[]' ? [] : JSON.parse(rentals_list))
+  end
+
+  def handle_people(arry_of_people)
+    arry_of_people.each do |person|
+      @list_of_people << if person['person'] == 'Teacher'
+                           @app.create_person(2, person['age'], person['name'], person['specialization'])
+                         else
+                           @app.create_person(1, person['age'], person['name'], nil, person['parent_permission'])
+
+                         end
+    end
+  end
+
+  def handle_rentals(arry_of_rentals)
+    arry_of_rentals.each do |rental|
+      find_book = @list_of_books.select { |book| book.title == rental['book'] }
+      find_person = @list_of_people.select { |person| person.id == rental['id'] }
+      @app.create_rental(find_book[0], find_person[0], rental['date'])
+    end
   end
 
   # list of options
@@ -49,6 +83,8 @@ class Func
     person = @app.create_person(select, age, name, specialization, parent_permission)
     @list_of_people << person
     puts 'Person created successfully'
+
+    write_data('people.json', @list_of_people)
   end
 
   def create_book
@@ -61,6 +97,8 @@ class Func
     book = @app.create_book(title, author)
     @list_of_books << book
     puts 'Book created successfully'
+
+    write_data('books.json', @list_of_books)
   end
 
   def create_rental
@@ -84,6 +122,8 @@ class Func
     date = gets.chomp
     @app.create_rental(date, @list_of_books[book.to_i], @list_of_people[person.to_i])
     puts 'Rental created successfully'
+
+    write_data('rentals.json', { id: @list_of_books[book.to_i].id, date: date })
   end
 
   # List all rentals for a given person id
