@@ -27,7 +27,7 @@ class Func
   def handle_people(arry_of_people)
     arry_of_people.each do |person|
       @list_of_people << if person['person'] == 'Teacher'
-                           @app.create_person(2, person['age'], person['name'], person['specialization'])
+                           @app.create_person(2, person['age'], person['name'], person['specialization'], true)
                          else
                            @app.create_person(1, person['age'], person['name'], nil, person['parent_permission'])
 
