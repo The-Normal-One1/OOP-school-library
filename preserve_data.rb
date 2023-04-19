@@ -37,8 +37,12 @@ def write_people(data)
   base = "#{Dir.pwd}/stored_data"
   people_array = []
   data.each do |person|
-    people_array.push({select: @ , name: person.name, age: person.age,
-                      id: person.id})
+    people_array.push(if person.instance_of?(Student)
+                        { person: 'Student', name: person.name, age: person.age, parent_permission: person.parent_permission,
+                          id: person.id }
+                      else
+                        { person: 'Teacher',name: person.name, age: person.age, specialization: person.specialization, id: person.id, parent_permission: true }
+                      end)
   end
   File.write("#{base}/people.json", people_array.to_json, mode: 'w')
 end
