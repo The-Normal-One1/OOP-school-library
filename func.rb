@@ -18,7 +18,6 @@ class Func
       @list_of_books << @app.create_book(book['title'], book['author']) unless books_list == ''
     end
 
-
     handle_people(people_list == '[]' ? [] : JSON.parse(people_list))
 
     handle_rentals(rentals_list == '[]' ? [] : JSON.parse(rentals_list))
