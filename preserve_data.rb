@@ -1,5 +1,6 @@
 require 'fileutils'
 require 'json'
+require './func'
 
 FileUtils.mkdir_p('stored_data')
 
@@ -11,11 +12,11 @@ File.open("#{base}/rentals.json", 'w') unless File.exist?("#{base}/rentals.json"
 
 def write_data(filename, data)
   case filename
-  when books.json
+  when 'books.json'
     write_books(data)
-  when people.json
+  when 'people.json'
     write_people(data)
-  when rentals.json
+  when 'rentals.json'
     write_rentals(data)
   else
     puts 'Error: Invalid filename'
@@ -29,21 +30,17 @@ def write_books(data)
     book_array.push({ title: book.title, author: book.author })
   end
 
-  File.write("#{base}/books.json", book_array.to_json, mode: 'a')
+  File.write("#{base}/books.json", book_array.to_json, mode: 'w')
 end
 
 def write_people(data)
   base = "#{Dir.pwd}/stored_data"
   people_array = []
   data.each do |person|
-    people_array.push({ class: person.status, name: person.name, age: person.age,
-                        parent_permission: (if person.status == 'Student'
-                                              person.parent_permission
-                                            end), id: person.id, specialization: (if person.status == 'Teacher'
-                                                                                    person.specialization
-                                                                                  end) })
+    people_array.push({select: @ , name: person.name, age: person.age,
+                      id: person.id})
   end
-  File.write("#{base}/people.json", people_array.to_json, mode: 'a')
+  File.write("#{base}/people.json", people_array.to_json, mode: 'w')
 end
 
 def write_rentals(data)
@@ -52,5 +49,5 @@ def write_rentals(data)
   data.each do |rental|
     rental_array.push({ date: rental.date, book: rental.book, person: rental.person, id: rental.id })
   end
-  File.write("#{base}/rentals.json", rental_array.to_json, mode: 'a')
+  File.write("#{base}/rentals.json", rental_array.to_json, mode: 'w')
 end
